@@ -475,98 +475,96 @@ document.addEventListener("DOMContentLoaded", function () {
 //   circleLine(cl);
 
 //
-window.addEventListener('scroll' , () => {
 
-    const isometric = document.querySelector('.isometric');
 
-    const cross = document.querySelector('.cross');
+window.addEventListener("scroll", () => {
 
-    const line1 = document.querySelector('#line1');
-    const line2 = document.querySelector('#Line2');
-    const line3 = document.querySelector('#line3');
-    const line4 = document.querySelector('#Line4');
-    const line5 = document.querySelector('#Line5');
+    const offset = (element) => element.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
 
-    const room1 = document.querySelector('.bed');
-    const room2 = document.querySelector('.office');
-    const room3 = document.querySelector('.toilet');
-    const room4 = document.querySelector('.kitchen');
-    const room5 = document.querySelector('.livingroom');
+    const isometric = document.querySelector(".isometric");
+    const cross = document.querySelector(".cross");
 
-    if(window.innerWidth > 500){
+    const line1 = document.querySelector("#line1");
+    const line2 = document.querySelector("#Line2");
+    const line3 = document.querySelector("#line3");
+    const line4 = document.querySelector("#Line4");
+    const line5 = document.querySelector("#Line5");
 
-        if(scrollY > 2120){
+    const room1 = document.querySelector(".bed");
+    const room2 = document.querySelector(".office");
+    const room3 = document.querySelector(".toilet");
+    const room4 = document.querySelector(".kitchen");
+    const room5 = document.querySelector(".livingroom");
 
-            isometric.classList.add('opacity_1');
-            
+
+    const point1 = offset(isometric);
+
+    if (window.innerWidth > 500) {
+        if (window.scrollY > point1) {
+            isometric.classList.add("opacity_1");
+
             setTimeout(() => {
-                cross.classList.add('crossactive');
-            },500);
-    
-            setTimeout(() => {
-    
-                line1.classList.add('lineactive1');
-    
-                setTimeout(() =>{
-                    line2.classList.add('lineactive2');
-                },900)
-    
-                setTimeout(() =>{
-                    line3.classList.add('lineactive3');
-                },1100)
-    
-                setTimeout(() =>{
-                    line4.classList.add('lineactive4');
-                },1300)
-    
-                setTimeout(() =>{
-                    line5.classList.add('lineactive5');
-                },1500)
-    
-            },700);
-    
-            setTimeout(() => {
-    
-                room1.classList.add('bedactive');
-    
-                setTimeout(() =>{
-                    room2.classList.add('officeactive');
-                },500)
-    
-                setTimeout(() =>{
-                    room3.classList.add('toiletactive');
-                },700)
-    
-                setTimeout(() =>{
-                    room4.classList.add('kitchenactive');
-                },900)
-    
-                setTimeout(() =>{
-                    room5.classList.add('livingroomactive');
-                },1100)
-    
-            },2000);
-    
-        }else{
-            isometric.classList.remove('opacity_1');
-            cross.classList.remove('crossactive');
-            line1.classList.remove('lineactive1');
-            line2.classList.remove('lineactive2');
-            line3.classList.remove('lineactive3');
-            line4.classList.remove('lineactive4');
-            line5.classList.remove('lineactive5');
-            room1.classList.remove('bedactive');
-            room2.classList.remove('officeactive');
-            room3.classList.remove('toiletactive');
-            room4.classList.remove('kitchenactive');
-            room5.classList.remove('livingroomactive');
-        };
+                cross.classList.add("crossactive");
+            }, 500);
 
-    }else{
-        isometric.classList.add('opacity_1');
+            setTimeout(() => {
+                line1.classList.add("lineactive1");
+
+                setTimeout(() => {
+                    line2.classList.add("lineactive2");
+                }, 900);
+
+                setTimeout(() => {
+                    line3.classList.add("lineactive3");
+                }, 1100);
+
+                setTimeout(() => {
+                    line4.classList.add("lineactive4");
+                }, 1300);
+
+                setTimeout(() => {
+                    line5.classList.add("lineactive5");
+                }, 1500);
+            }, 700);
+
+            setTimeout(() => {
+                room1.classList.add("bedactive");
+
+                setTimeout(() => {
+                    room2.classList.add("officeactive");
+                }, 500);
+
+                setTimeout(() => {
+                    room3.classList.add("toiletactive");
+                }, 700);
+
+                setTimeout(() => {
+                    room4.classList.add("kitchenactive");
+                }, 900);
+
+                setTimeout(() => {
+                    room5.classList.add("livingroomactive");
+                }, 1100);
+            }, 2000);
+        } else {
+            isometric.classList.remove("opacity_1");
+            cross.classList.remove("crossactive");
+            line1.classList.remove("lineactive1");
+            line2.classList.remove("lineactive2");
+            line3.classList.remove("lineactive3");
+            line4.classList.remove("lineactive4");
+            line5.classList.remove("lineactive5");
+            room1.classList.remove("bedactive");
+            room2.classList.remove("officeactive");
+            room3.classList.remove("toiletactive");
+            room4.classList.remove("kitchenactive");
+            room5.classList.remove("livingroomactive");
+        }
+    }else if (window.innerWidth <= 500){
+        isometric.classList.add("opacity_1");
     };
-
 });
+
 
 
 // 네번째 스크롤 이벤트
@@ -596,240 +594,155 @@ window.addEventListener('scroll', () => {
     const table_more = document.querySelector('.table_more');
 
     const scrollPos = scrollY; // 현재 스크롤 위치
-    const screenWidth = window.innerWidth; // 현재 화면 너비
 
-    if (screenWidth > 1024) { // 데스크톱 해상도
-        if (scrollPos > 3735) {
-            maintitle.classList.add('mainmoving');
-            setTimeout(() => subtitle.classList.add('subtitlemoving'), 1000);
-        } else {
-            maintitle.classList.remove('mainmoving');
-            subtitle.classList.remove('subtitlemoving');
-        }
+    const point1 = maintitle.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point2 = fourvideo.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point3 = house1.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point4 = house2.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point5 = txt2.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point6 = house3.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point7 = house4.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point8 = house5.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point9 = house6.getBoundingClientRect().top + window.scrollY - window.innerHeight;
+    const point10 = house8.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point11 = house9.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point12 = txt4.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
 
-        if (scrollPos > 4292) {
-            fourvideo.classList.add('videomoving');
-            setTimeout(() => sopa.classList.add('sopamove'), 1000);
-        } else {
-            fourvideo.classList.remove('videomoving');
-            sopa.classList.remove('sopamove');
-        }
 
-        if (scrollPos > 4680) {
-            house1.classList.add("img1move");
-            setTimeout(() => main_txt.classList.add('main_txtmove'), 1000);
-            setTimeout(() => sub_txt.classList.add('sub_txtmove'), 1500);
-        } else {
-            house1.classList.remove("img1move");
-            main_txt.classList.remove('main_txtmove');
-            sub_txt.classList.remove('sub_txtmove');
-        }
 
-        if (scrollPos > 5750){
-            house2.classList.add('house2move')
-            setTimeout(() => sopa_more.classList.add('sopa_more_move'),1000);
-        }else{
-            house2.classList.remove('house2move')
-            sopa_more.classList.remove('sopa_more_move')
-        };
-        
 
-        if (scrollPos > 6600) txt2.classList.add('txt2move');
-        else txt2.classList.remove('txt2move');
+    if(scrollPos > point1){
+        maintitle.classList.add('mainmoving');
+        setTimeout(() => {
+            subtitle.classList.add('subtitlemoving');
+        },1000);
+    }else{
+        maintitle.classList.remove('mainmoving');
+        maintitle.style.transition = 'ease-in-out 0.5s';
+        subtitle.classList.remove('subtitlemoving');
+        subtitle.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if (scrollPos > 7189) house3.classList.add('house3move');
-        else house3.classList.remove('house3move');
+    if(scrollPos > point2){
+        fourvideo.classList.add('videomoving');
+        setTimeout(() => {
+            sopa.classList.add('sopamove');
+        },1000);
+    }else{
+        fourvideo.classList.remove('videomoving');
+        fourvideo.style.transition = 'ease-in-out 0.5s';
+        sopa.classList.remove('sopamove');
+        sopa.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if (scrollPos > 7689) house4.classList.add('house4move');
-        else house4.classList.remove('house4move');
+    if(scrollPos > point3){
+        house1.classList.add("img1move");
+        setTimeout(() => {
+            main_txt.classList.add('main_txtmove');
+        },500);
+        setTimeout(() => {
+            sub_txt.classList.add('sub_txtmove');
+        },1000);
+    }else{
+        house1.classList.remove("img1move");
+        house1.style.transition = 'ease-in-out 0.5s';
+        main_txt.classList.remove('main_txtmove');
+        main_txt.style.transition = 'ease-in-out 0.5s';
+        sub_txt.classList.remove('sub_txtmove');
+        sub_txt.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if (scrollPos > 9103) {
-            house5.classList.add('house5move');
-            setTimeout(() => house6.classList.add('house6move'), 1000);
-            setTimeout(() => stand_more.classList.add('stand_more_move'),1500);
-        } else {
-            house5.classList.remove('house5move');
-            house6.classList.remove('house6move');
-            stand_more.classList.remove('stand_more_move')
-        }
+    if(scrollPos > point4){
+        house2.classList.add('house2move');
+        setTimeout(() => {
+            sopa_more.classList.add('sopa_more_move');
+        },1000);
+    }else{
+        house2.classList.remove('house2move');
+        house2.style.transition = 'ease-in-out 0.5s';
+        sopa_more.classList.remove('sopa_more_move');
+        sopa_more.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if (scrollPos > 10826) {
-            house7.classList.add('house7move');
-            setTimeout(() => house8.classList.add('house8move'), 500);
-        } else {
-            house7.classList.remove('house7move');
-            house8.classList.remove('house8move');
-        }
+    if(scrollPos > point5){
+        txt2.classList.add('txt2move');
+    }else{
+        txt2.classList.remove('txt2move');
+        txt2.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if (scrollPos > 11990) {
-            house9.classList.add('house9move');
-            setTimeout(() => txt3.classList.add('txt3move'), 500);
-            setTimeout(() => house10.classList.add('house10move'), 1000);
-            setTimeout(() => table_more.classList.add('table_more_move'),1500);
-        } else {
-            house9.classList.remove('house9move');
-            txt3.classList.remove('txt3move');
-            house10.classList.remove('house10move');
-            table_more.classList.remove('table_more_move')
-        }
+    if(scrollPos > point6){
+        house3.classList.add('house3move');
+    }else{
+        house3.classList.remove('house3move');
+        house3.style.transition = 'ease-in-out 0.5s';
+    };
+    
+    if(scrollPos > point7){
+        house4.classList.add('house4move');
+    }else{
+        house4.style.transition = 'ease-in-out 0.5s';
+        house4.classList.remove('house4move');
+    };
 
-        if (scrollPos > 12876) txt4.classList.add('txt4move');
-        else txt4.classList.remove('txt4move');
-    } else if (screenWidth > 501 && screenWidth <= 1024) { // 태블릿 해상도
-        if (scrollPos > 4394) {
-            maintitle.classList.add('mainmoving');
-            setTimeout(() => subtitle.classList.add('subtitlemoving'), 1000);
-        } else {
-            maintitle.classList.remove('mainmoving');
-            subtitle.classList.remove('subtitlemoving');
-        }
+    if(scrollPos > point8){
+        house5.classList.add('house5move');
+        setTimeout(() => {
+            stand_more.classList.add('stand_more_move');
+        },1500);
+    }else{
+        house5.classList.remove('house5move');
+        house5.style.transition = 'ease-in-out 0.5s';
+        stand_more.classList.remove('stand_more_move');
+        stand_more.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if (scrollPos > 4506) {
-            fourvideo.classList.add('videomoving');
-            setTimeout(() => sopa.classList.add('sopamove'), 1000);
-        } else {
-            fourvideo.classList.remove('videomoving');
-            sopa.classList.remove('sopamove');
-        }
+    if(scrollPos > point9){
+        house6.classList.add('house6move');
+    }else{
+        house6.classList.remove('house6move');
+        house6.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if (scrollPos > 5646) {
-            house1.classList.add("img1move");
-            setTimeout(() => main_txt.classList.add('main_txtmove'), 1000);
-            setTimeout(() => sub_txt.classList.add('sub_txtmove'), 1500);
-        } else {
-            house1.classList.remove("img1move");
-            main_txt.classList.remove('main_txtmove');
-            sub_txt.classList.remove('sub_txtmove');
-        }
+    if(scrollPos > point10){
+        house7.classList.add('house7move');
+        setTimeout(() => {
+            house8.classList.add('house8move');
+        },500);
+    }else{
+        house7.classList.remove('house7move');
+        house7.style.transition = 'ease-in-out 0.5s';
+        house8.classList.remove('house8move');
+        house8.style.transition = 'ease-in-out 0.5s';
+    };
+    
+    if(scrollPos > point11){
+        house9.classList.add('house9move');
+        setTimeout(() => {
+            txt3.classList.add('txt3move');
+        },500);
+        setTimeout(() => {
+            house10.classList.add('house10move');
+        },1000);
+        setTimeout(() => {
+            table_more.classList.add('table_more_move');
+        },1500);
+    }else{
+        house9.classList.remove('house9move');
+        house9.style.transition = 'ease-in-out 0.5s';
+        txt3.classList.remove('txt3move');
+        txt3.style.transition = 'ease-in-out 0.5s';
+        house10.classList.remove('house10move');
+        house10.style.transition = 'ease-in-out 0.5s';
+        table_more.classList.remove('table_more_move');
+    };
 
-        if (scrollPos > 6638){
-            house2.classList.add('house2move')
-            setTimeout(() => sopa_more.classList.add('sopa_more_move'),1000);
-        }else{
-            house2.classList.remove('house2move')
-            sopa_more.classList.remove('sopa_more_move')
-        };
-
-        if (scrollPos > 7397) txt2.classList.add('txt2move');
-        else txt2.classList.remove('txt2move');
-
-        if (scrollPos > 7753) house3.classList.add('house3move');
-        else house3.classList.remove('house3move');
-
-        if (scrollPos > 8279) house4.classList.add('house4move');
-        else house4.classList.remove('house4move');
-
-        if (scrollPos > 8870) {
-            house5.classList.add('house5move');
-            setTimeout(() => house6.classList.add('house6move'), 1000);
-            setTimeout(() => stand_more.classList.add('stand_more_move'),1500);
-        } else {
-            house5.classList.remove('house5move');
-            house6.classList.remove('house6move');
-            stand_more.classList.remove('stand_more_move')
-        }
-
-        if (scrollPos > 9723) {
-            house7.classList.add('house7move');
-            setTimeout(() => house8.classList.add('house8move'), 500);
-        } else {
-            house7.classList.remove('house7move');
-            house8.classList.remove('house8move');
-        }
-
-        if (scrollPos > 10376) {
-            house9.classList.add('house9move');
-            setTimeout(() => txt3.classList.add('txt3move'), 500);
-            setTimeout(() => house10.classList.add('house10move'), 1000);
-            setTimeout(() => table_more.classList.add('table_more_move'),1500);
-        } else {
-            house9.classList.remove('house9move');
-            txt3.classList.remove('txt3move');
-            house10.classList.remove('house10move');
-            table_more.classList.remove('table_more_move')
-        }
-
-        if (scrollPos > 11715) txt4.classList.add('txt4move');
-        else txt4.classList.remove('txt4move');
-
-    } else if (screenWidth <= 500) { // 모바일 해상도
-        if (scrollPos > 3200) {
-            maintitle.classList.add('mainmoving');
-            setTimeout(() => subtitle.classList.add('subtitlemoving'), 1000);
-        } else {
-            maintitle.classList.remove('mainmoving');
-            subtitle.classList.remove('subtitlemoving');
-        }
-
-        if (scrollPos > 3589) {
-            fourvideo.classList.add('videomoving');
-            setTimeout(() => sopa.classList.add('sopamove'), 1000);
-        } else {
-            fourvideo.classList.remove('videomoving');
-            sopa.classList.remove('sopamove');
-        }
-
-        if (scrollPos > 3766) {
-            house1.classList.add("img1move");
-            setTimeout(() => main_txt.classList.add('main_txtmove'), 1000);
-            setTimeout(() => sub_txt.classList.add('sub_txtmove'), 1500);
-        } else {
-            house1.classList.remove("img1move");
-            main_txt.classList.remove('main_txtmove');
-            sub_txt.classList.remove('sub_txtmove');
-        }
-
-        if (scrollPos > 4624){
-            house2.classList.add('house2move')
-            setTimeout(() => sopa_more.classList.add('sopa_more_move'),1000);
-        }else{
-            house2.classList.remove('house2move')
-            sopa_more.classList.remove('sopa_more_move')
-        };
-        
-
-        if (scrollPos > 4722) txt2.classList.add('txt2move');
-        else txt2.classList.remove('txt2move');
-
-        if (scrollPos > 5158) house3.classList.add('house3move');
-        else house3.classList.remove('house3move');
-
-        if (scrollPos > 5347) house4.classList.add('house4move');
-        else house4.classList.remove('house4move');
-
-        if (scrollPos > 5775) {
-            house5.classList.add('house5move');
-            setTimeout(() => house6.classList.add('house6move'), 1000);
-            setTimeout(() => stand_more.classList.add('stand_more_move'),1500);
-        } else {
-            house5.classList.remove('house5move');
-            house6.classList.remove('house6move');
-            stand_more.classList.remove('stand_more_move')
-        }
-
-        if (scrollPos > 6474) {
-            house7.classList.add('house7move');
-            setTimeout(() => house8.classList.add('house8move'), 500);
-        } else {
-            house7.classList.remove('house7move');
-            house8.classList.remove('house8move');
-        }
-
-        if (scrollPos > 6886) {
-            house9.classList.add('house9move');
-            setTimeout(() => txt3.classList.add('txt3move'), 500);
-            setTimeout(() => house10.classList.add('house10move'), 1000);
-            setTimeout(() => table_more.classList.add('table_more_move'),1500);
-        } else {
-            house9.classList.remove('house9move');
-            txt3.classList.remove('txt3move');
-            house10.classList.remove('house10move');
-            table_more.classList.remove('table_more_move')
-        }
-
-        if (scrollPos > 7449) txt4.classList.add('txt4move');
-        else txt4.classList.remove('txt4move');
-    }
+    if(scrollPos > point12){
+        txt4.classList.add('txt4move');
+    }else{
+        txt4.classList.remove('txt4move');
+        txt4.style.transition = 'ease-in-out 0.5s';
+    };
 });
 
 
@@ -893,147 +806,67 @@ window.addEventListener('scroll', () => {
     const box_white2 = document.querySelector('.box_white2');
     const box_white3 = document.querySelector('.box_white3');
 
-    if (window.innerWidth > 1024) { // 데스크톱 해상도
-        
-        if(scrollY > 13613){
-            five.classList.add('five_warp_black');
+    const point1 = five.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point2 = five_img1.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2;
+    const point3 = box_white.getBoundingClientRect().top + window.scrollY - window.innerHeight;
 
-            setTimeout(() => {
-                five_video.classList.add('video_move');
-            },3000);
+    if(scrollY > point1){
+        five.classList.add('five_warp_black');
 
-        }else{
-            five.classList.remove('five_warp_black');
-            five_video.classList.remove('video_move');
-        }
+        setTimeout(() => {
+            five_video.classList.add('video_move');
+        },3000);
 
-        if(scrollY > 14748){
-            five_img1.classList.add('img_opacity');
+    }else{
+        five.classList.remove('five_warp_black');
+        five.style.transition = 'ease-in-out 3s';
+        five_video.classList.remove('video_move');
+        five_video.style.transition = 'ease-in-out 0.5s';
+    };
 
-            setTimeout(() => {
-                five_img2.classList.add('img_opacity');
-            },500)
 
-            setTimeout(() => {
-                five_img3.classList.add('img_opacity');
-            },1000)
+    if(scrollY > point2){
+        five_img1.classList.add('img_opacity');
 
-            setTimeout(() => {
-                box_white.classList.add('box_white_down');
-            },1500);
+        setTimeout(() => {
+            five_img2.classList.add('img_opacity');
+        },500)
 
-            setTimeout(() => {
-                box_white2.classList.add('box_white_up');
-            },2000);
+        setTimeout(() => {
+            five_img3.classList.add('img_opacity');
+        },1000)
 
-            setTimeout(() => {
-                box_white3.classList.add('box_white_right');
-            },2500);
+    }else{
+        five_img1.classList.remove('img_opacity');
+        five_img1.style.transition = 'ease-in-out 0.5s';
+        five_img2.classList.remove('img_opacity');
+        five_img2.style.transition = 'ease-in-out 0.5s';
+        five_img3.classList.remove('img_opacity');
+        five_img3.style.transition = 'ease-in-out 0.5s';
+    };
 
-        }else{
-            five_img1.classList.remove('img_opacity');
-            five_img2.classList.remove('img_opacity');
-            five_img3.classList.remove('img_opacity');
-            box_white.classList.remove('box_white_down');
-            box_white2.classList.remove('box_white_up');
-            box_white3.classList.remove('box_white_right');
-        }
-       
-    } else if (window.innerWidth > 501 && window.innerWidth <= 1024) { // 태블릿 해상도
-       
-        if(scrollY > 12358){
-            five.classList.add('five_warp_black');
+    if(scrollY > point3){
 
-            setTimeout(() => {
-                five_video.classList.add('video_move');
-            },3000);
+  
+        box_white.classList.add('box_white_down');
 
-        }else{
-            five.classList.remove('five_warp_black');
-            five_video.classList.remove('video_move');
-        }
+        setTimeout(() => {
+            box_white2.classList.add('box_white_up');
+        },500);
 
-        if(scrollY > 13714){
-            five_img1.classList.add('img_opacity');
+        setTimeout(() => {
+            box_white3.classList.add('box_white_right');
+        },1000);
 
-            setTimeout(() => {
-                five_img2.classList.add('img_opacity');
-            },500)
+    }else{
+        box_white.classList.remove('box_white_down');
+        box_white.style.transition = 'ease-in-out 0.5s';
+        box_white2.classList.remove('box_white_up');
+        box_white2.style.transition = 'ease-in-out 0.5s';
+        box_white3.classList.remove('box_white_right');
+        box_white3.style.transition = 'ease-in-out 0.5s';
+    };
 
-            setTimeout(() => {
-                five_img3.classList.add('img_opacity');
-            },1000)
-
-            setTimeout(() => {
-                box_white.classList.add('box_white_down');
-            },1500);
-
-            setTimeout(() => {
-                box_white2.classList.add('box_white_up');
-            },2000);
-
-            setTimeout(() => {
-                box_white3.classList.add('box_white_right');
-            },2500);
-
-        }else{
-            five_img1.classList.remove('img_opacity');
-            five_img2.classList.remove('img_opacity');
-            five_img3.classList.remove('img_opacity');
-            box_white.classList.remove('box_white_down');
-            box_white2.classList.remove('box_white_up');
-            box_white3.classList.remove('box_white_right');
-        }
-        
-    } else if (window.innerWidth <= 500) { // 모바일 해상도
-       
-        if(scrollY > 8014){
-            five.classList.add('five_warp_black');
-
-            setTimeout(() => {
-                five_video.classList.add('video_move');
-            },3000);
-
-        }else{
-            five.classList.remove('five_warp_black');
-            five_video.classList.remove('video_move');
-        }
-
-        if(scrollY > 8719){
-            five_img1.classList.add('img_opacity');
-
-            setTimeout(() => {
-                five_img2.classList.add('img_opacity');
-            },500)
-
-            setTimeout(() => {
-                five_img3.classList.add('img_opacity');
-            },1000)
-
-        }else{
-            five_img1.classList.remove('img_opacity');
-            five_img2.classList.remove('img_opacity');
-            five_img3.classList.remove('img_opacity');
-        }
-
-        if(scrollY > 9285){
-
-            box_white.classList.add('box_white_down');
-
-            setTimeout(() => {
-                box_white2.classList.add('box_white_up');
-            },500);
-
-            setTimeout(() => {
-                box_white3.classList.add('box_white_right');
-            },1000);
-        }else{
-            box_white.classList.remove('box_white_down');
-            box_white2.classList.remove('box_white_up');
-            box_white3.classList.remove('box_white_right');
-        };
-
-    }
 });
 
 
@@ -1116,97 +949,46 @@ window.addEventListener('scroll', () => {
     const six4 = document.querySelector('.six4_img');
     const six5 = document.querySelector('.six5_img');
 
-    if (window.innerWidth > 1024) {
 
-        if(scrollY > 15891){
-            six1.classList.add('six_up_move');
+    const point1 = six1.getBoundingClientRect().top + window.scrollY - window.innerHeight;
+    const point2 = six3.getBoundingClientRect().top + window.scrollY - window.innerHeight;
+    const point3 = six4.getBoundingClientRect().top + window.scrollY - window.innerHeight;
 
-            setTimeout(() => {
-                six2.classList.add('six_up_move');
-            },500);
 
-        }else{
-            six1.classList.remove('six_up_move');
-            six2.classList.remove('six_up_move');
-        };
+    if (scrollY > point1) {
+        six1.classList.add('six_up_move');
 
-        if(scrollY > 16655){
-            six3.classList.add('six_up_move')
-        }else{
-            six3.classList.remove('six_up_move')
-        };
+        setTimeout(() => {
+            six2.classList.add('six_up_move');
+        }, 500);
 
-        if(scrollY > 17432){
-            six4.classList.add('six_up_move')
-            setTimeout(() => {
-                six5.classList.add('six_up_move');
-            },500);
-        }else{
-            six4.classList.remove('six_up_move')
-            six5.classList.remove('six_up_move')
-        };
-       
-    } else if (window.innerWidth > 501 && window.innerWidth <= 1024) {
+    } else {
+        six1.classList.remove('six_up_move');
+        six1.style.transition = 'ease-in-out 0.5s';
+        six2.classList.remove('six_up_move');
+        six2.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if(scrollY > 14708){
-            six1.classList.add('six_up_move');
+    if (scrollY > point2) {
+        six3.classList.add('six_up_move');
+    } else {
+        six3.classList.remove('six_up_move');
+        six3.style.transition = 'ease-in-out 0.5s';
+    };
 
-            setTimeout(() => {
-                six2.classList.add('six_up_move');
-            },500);
 
-        }else{
-            six1.classList.remove('six_up_move');
-            six2.classList.remove('six_up_move');
-        };
+    if (scrollY > point3) {
+        six4.classList.add('six_up_move');
+        setTimeout(() => {
+            six5.classList.add('six_up_move');
+        }, 500);
+    } else {
+        six4.classList.remove('six_up_move');
+        six4.style.transition = 'ease-in-out 0.5s';
+        six5.classList.remove('six_up_move');
+        six5.style.transition = 'ease-in-out 0.5s';
+    };
 
-        if(scrollY > 15122){
-            six3.classList.add('six_up_move')
-        }else{
-            six3.classList.remove('six_up_move')
-        };
-
-        if(scrollY > 15559){
-            six4.classList.add('six_up_move')
-            setTimeout(() => {
-                six5.classList.add('six_up_move');
-            },500);
-        }else{
-            six4.classList.remove('six_up_move')
-            six5.classList.remove('six_up_move')
-        };
-
-    } else if (window.innerWidth <= 500){
-
-        if(scrollY > 10096){
-            six1.classList.add('six_up_move');
-
-            setTimeout(() => {
-                six2.classList.add('six_up_move');
-            },500);
-
-        }else{
-            six1.classList.remove('six_up_move');
-            six2.classList.remove('six_up_move');
-        };
-
-        if(scrollY > 10239){
-            six3.classList.add('six_up_move')
-        }else{
-            six3.classList.remove('six_up_move')
-        };
-
-        if(scrollY > 10477){
-            six4.classList.add('six_up_move')
-            setTimeout(() => {
-                six5.classList.add('six_up_move');
-            },500);
-        }else{
-            six4.classList.remove('six_up_move')
-            six5.classList.remove('six_up_move')
-        };
-
-    }
 });
 
 // six3 호버시 

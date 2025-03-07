@@ -959,6 +959,13 @@ body{
                 transform: translate(-50%,-50%);
 
                 opacity: 0;
+
+                & > picture{
+                    & > img{
+                        width: 48.6458vw;
+                        min-width: 210px;
+                    }
+                }
             }
 
             .isometric.opacity_1{
@@ -970,138 +977,75 @@ body{
 
                 opacity: 0;
 
-                & > img:nth-child(1){
+                .cross1{
                     position: absolute;
                     top: 42%;
                     left: 47%;
+                    width: 36px;
+                    max-width: 36px;
+                    cursor: pointer;
                 }
 
-                & > img:nth-child(2){
+                .cross1:hover{
+                    transform: scale(0.9);
+                    transition: ease-in-out 0.1s;
+                }
+
+                .cross2{
                     position: absolute;
                     top: 44%;
                     left: 37%;
+                    width: 1.8750vw;
+                    max-width: 36px;
+                    min-width: 36px;
+                    cursor: pointer;
                 }
 
-                & > img:nth-child(3){
+                .cross2:hover{
+                    transform: scale(0.9);
+                    transition: ease-in-out 0.1s;
+                }
+
+                .cross3{
                     position: absolute;
                     top: 50%;
                     left: 39%;
+                    cursor: pointer;
                 }
 
-                & > img:nth-child(4){
+                .cross3:hover{
+                    transform: scale(0.9);
+                    transition: ease-in-out 0.1s;
+                }
+
+                .cross4{
                     position: absolute;
                     top: 52%;
                     left: 48%;
+                    cursor: pointer;
                 }
 
-                & > img:nth-child(5){
+                .cross4:hover{
+                    transform: scale(0.9);
+                    transition: ease-in-out 0.1s;
+                }
+
+                .cross5{
                     position: absolute;
                     top: 59%;
                     left: 62%;
+                    cursor: pointer;
+                }
+
+                .cross5:hover{
+                    transform: scale(0.9);
+                    transition: ease-in-out 0.1s;
                 }
             }
 
             .cross.crossactive{
                 opacity: 1;
                 transition: opacity 0.5s;
-            }
-
-            .line{
-
-                .svg1{
-                    position: absolute;
-                    top: 32.8%;
-                    left: 47.6vw;
-
-                    #line1{
-                        stroke-dasharray: 477;
-                        stroke-dashoffset: 477;
-                        opacity: 0;
-                    }
-
-                    #line1.lineactive1{
-                        opacity: 1;
-                        animation: line_ani 1s linear 0.5s forwards;
-                        transition: 1s all;
-                    }
-                }
-
-                .svg2{
-                    position: absolute;
-                    top: 33.5%;
-                    left: 22.3vw;
-                    rotate: 11deg;
-
-                    #Line2{
-                        stroke-dasharray: 357;
-                        stroke-dashoffset: 357;
-                        opacity: 0;
-                    }
-
-                    #Line2.lineactive2{
-                        opacity: 1;
-                        animation: line_ani2 1s linear 0.5s forwards;
-                        transition: 1s all;
-                    }
-                }
-
-                .svg3{
-                    position: absolute;
-                    top: 53.9%;
-                    left: 19.2%;
-                    rotate: -16deg;
-
-                    #line3{
-                        stroke-dasharray: 542;
-                        stroke-dashoffset: 542;
-                        opacity: 0;
-                    }
-
-                    #line3.lineactive3{
-                        opacity: 1;
-                        animation: line_ani3 1s linear 0.5s forwards;
-                        transition: 1s all;
-                    }
-                }
-
-                .svg4{
-                    position: absolute;
-                    top: 53.5%;
-                    left: 48.85%;
-                    rotate: 0deg;
-
-                    #Line4{
-                        stroke-dasharray: 509;
-                        stroke-dashoffset: 509;
-                        opacity: 0;
-                    }
-
-                    #Line4.lineactive4{
-                        opacity: 1;
-                        animation: line_ani4 1s linear 0.5s forwards;
-                        transition: 1s all;
-                    }
-                }
-
-                .svg5{
-                    position: absolute;
-                    top: 66.5%;
-                    left: 58.8%;
-                    rotate: 62deg;
-
-                    #Line5{
-                        stroke-dasharray: 302;
-                        stroke-dashoffset: 302;
-                        opacity: 0;
-                    }
-
-                    #Line5.lineactive5{
-                        opacity: 1;
-                        animation: line_ani5 1s linear 0.5s forwards;
-                        transition: 1s all;
-                    }
-                }
-
             }
 
             .room{
@@ -1111,15 +1055,16 @@ body{
                 .bed{
                     position: absolute;
                     top: 13%;
-                    left: 68vw;
+                    left: 68%;
                     overflow: hidden;
+                    animation: third2 4s ease-in-out infinite;
 
                     opacity: 0;
 
                     & > picture{
                         & > img{
                             width: 17.2917vw;
-                            min-width: 210px;
+                            min-width: 305px;
                         }
                     }
 
@@ -1136,10 +1081,10 @@ body{
                         font-size: 2.6042vw;
                         font-weight: bold;
                         text-align: center;
-                        line-height: 444px;
+                        line-height: 23.1250vw;
                         border-radius: 25px;
 
-                        display: none;
+                        opacity: 0;
                     }
 
                 }
@@ -1150,21 +1095,22 @@ body{
                 }
 
                 .bed:hover > span{
-                    display: inline-block;
-                    transition: all 0.5s;
+                   opacity: 1;
+                    transition: ease-in-out 0.1s;
                 }
 
                 .office{
                     position: absolute;
                     top: 13%;
                     left: 12vw;
+                    animation: third 5s ease-in-out infinite;
 
                     opacity: 0;
 
                     & > picture{
                         & > img{
                             width: 17.2917vw;
-                            min-width: 210px;
+                            min-width: 305px;
                         }
                     }
 
@@ -1184,7 +1130,7 @@ body{
                         line-height: 444px;
                         border-radius: 25px;
 
-                        display: none;
+                        opacity: 0;
                     }
                 }
 
@@ -1194,21 +1140,23 @@ body{
                 }
 
                 .office:hover > span{
-                    display: inline-block;
-                    transition: all 0.5s;
+                    opacity: 1;
+                    transition: ease-in-out 0.1s;
                 }
 
                 .toilet{
                     position: absolute;
                     top: 68%;
                     left: 12vw;
+
+                    animation: third 4s ease-in-out infinite;
                     
                     opacity: 0;
 
                     & > picture{
                         & > img{
                             width: 17.2917vw;
-                            min-width: 210px;
+                            min-width: 305px;
                         }
                     }
 
@@ -1228,7 +1176,7 @@ body{
                         line-height: 444px;
                         border-radius: 25px;
 
-                        display: none;
+                        opacity: 0;
                     }
                 }
 
@@ -1238,21 +1186,21 @@ body{
                 }
 
                 .toilet:hover > span{
-                    display: inline-block;
-                    transition: all 0.5s;
+                    opacity: 1;
+                    transition: ease-in-out 0.1s;
                 }
 
                 .kitchen{
                     position: absolute;
                     top: 76%;
                     left: 39vw;
+                    animation: third2 3s ease-in-out infinite;
 
                     opacity: 0;
-
                     & > picture{
                         & > img{
                             width: 17.2917vw;
-                            min-width: 210px;
+                            min-width: 305px;
                         }
                     }
 
@@ -1272,7 +1220,7 @@ body{
                         line-height: 444px;
                         border-radius: 25px;
 
-                        display: none;
+                        opacity: 0;
                     }
                 }
 
@@ -1284,19 +1232,22 @@ body{
                 .kitchen:hover > span{
                     display: inline-block;
                     transition: all 0.5s;
+                    opacity: 1;
+                    transition: ease-in-out 0.1s;
                 }
 
                 .livingroom{
                     position: absolute;
                     top: 68%;
                     left: 68vw;
+                    animation: third 5s ease-in-out infinite;
 
                     opacity: 0;
 
                     & > picture{
                         & > img{
                             width: 17.2917vw;
-                            min-width: 210px;
+                            min-width: 305px;
                         }
                     }
 
@@ -1316,7 +1267,7 @@ body{
                         line-height: 444px;
                         border-radius: 25px;
 
-                        display: none;
+                       opacity: 0;
                     }
                 }
 
@@ -1326,8 +1277,8 @@ body{
                 }
 
                 .livingroom:hover > span{
-                    display: inline-block;
-                    transition: all 0.5s;
+                    opacity: 1;
+                    transition: ease-in-out 0.1s;
                 }
 
             }
@@ -1538,7 +1489,7 @@ body{
 
                     position: absolute;
                     top: 70%;
-                    left: 60%;
+                    left: 64%;
                     transform: translate(-50%,-50%);
                     width: 261px;
                     height: 119px;
@@ -1745,7 +1696,7 @@ body{
 
                     position: absolute;
                     top: 80%;
-                    left: 79%;
+                    left: 84%;
                     transform: translate(-50%,-50%);
                     width: 210px;
                     height: 119px;
@@ -1962,7 +1913,7 @@ body{
 
                     position: absolute;
                     top: 80%;
-                    left: 79%;
+                    left: 84%;
                     transform: translate(-50%,-50%);
                     width: 210px;
                     height: 119px;
@@ -3005,7 +2956,7 @@ body{
                                 display: inline;
                                 color: #fff;
                                 font-weight: 600;
-                                font-size: 2rem;
+                                font-size: 1.0417vw;
     
                                 padding-left: 3%;
                                 box-sizing: border-box;
@@ -3017,7 +2968,7 @@ body{
                                 display: inline;
                                 color: #fff;
                                 font-weight: 600;
-                                font-size: 5rem;
+                                font-size: 2.6042vw;
     
                                 padding-left: 3%;
                                 box-sizing: border-box;
@@ -3073,7 +3024,7 @@ body{
             .footer_txt{
 
                 width: 40%;
-                font-size: 2rem;
+                font-size: 1.0417vw;
                 font-weight: 600;
 
                 & > ul{
@@ -3159,54 +3110,16 @@ body{
 	100% { transform: translateX(-200%); }
 }
 
-@keyframes line_ani{
-    from {
-        stroke-dashoffset: 477px;
-    }
-
-    to {
-        stroke-dashoffset: 0px;
-    }
+@keyframes third{
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(40px); }
+    100% { transform: translateY(0px); }
 }
 
-@keyframes line_ani2{
-    from {
-        stroke-dashoffset: 357px;
-    }
-
-    to {
-        stroke-dashoffset: 0px;
-    }
-}
-
-@keyframes line_ani3{
-    from {
-        stroke-dashoffset: 542px;
-    }
-
-    to {
-        stroke-dashoffset: 0px;
-    }
-}
-
-@keyframes line_ani4{
-    from {
-        stroke-dashoffset: 509px;
-    }
-
-    to {
-        stroke-dashoffset: 0px;
-    }
-}
-
-@keyframes line_ani5{
-    from {
-        stroke-dashoffset: 302px;
-    }
-
-    to {
-        stroke-dashoffset: 0px;
-    }
+@keyframes third2{
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-40px); }
+    100% { transform: translateY(0px); }
 }
 
 @keyframes furnituremove{
@@ -3220,6 +3133,7 @@ body{
     50% { transform: translateY(-30px); }
     100% { transform: translateY(0px); }
 }
+
 @keyframes arrow_move {
     0% {
         transform: translate(0px, 0px);
@@ -3238,6 +3152,7 @@ body{
     transition: all 0.5s;
     opacity: 1;
 }
+
 
 @media (min-width : 501px) and (max-width : 1023px){
 
@@ -3741,83 +3656,52 @@ body{
                 min-height: 2160px;
 
                 .cross{
-                    & > img:nth-child(1){
+
+                    .cross1{
                         position: absolute;
-                        top: 44%;
+                        top: 45%;
                         left: 47%;
                     }
     
-                    & > img:nth-child(2){
+                    .cross2{
                         position: absolute;
                         top: 46%;
-                        left: 37%;
+                        left: 34%;
                     }
     
-                    & > img:nth-child(3){
+                    .cross3{
                         position: absolute;
                         top: 50%;
                         left: 37%;
                     }
-    
-                    & > img:nth-child(4){
+
+                    .cross4{
                         position: absolute;
                         top: 50%;
                         left: 48%;
                     }
     
-                    & > img:nth-child(5){
+                    .cross5{
                         position: absolute;
-                        top: 55%;
-                        left: 62%;
+                        top: 53%;
+                        left: 58%;
                     }
-                }
-
-                .line{
-
-                    .svg1{
-                        position: absolute;
-                        top: 30%;
-                        left: 40.6%;
-                        rotate: -30deg;
-                    }
-    
-                    .svg2{
-                        position: absolute;
-                        top: 34%;
-                        left: 14.3%;
-                        rotate: 29deg;
-                    }
-    
-                    .svg3{
-                        position: absolute;
-                        top: 56.4%;
-                        left: 10.5%;
-                        rotate: -42deg;
-                    }
-    
-                    .svg4{
-                        position: absolute;
-                        top: 51.5%;
-                        left: 49.7%;
-                        rotate: 0deg;
-                    }
-    
-                    .svg5{
-                        position: absolute;
-                        top: 62.6%;
-                        left: 55.8%;
-                        rotate: 62deg;
-                    }
-    
                 }
 
                 .room{
     
                     .bed{
                         position: absolute;
-                        top: 13%;
-                        left: 61vw;
+                        top: 20%;
+                        left: 61%;
                         overflow: hidden;
+
+                        & > picture{
+                            & > img{
+                                width: 25.8065vw;
+                                min-width: 185px;
+                            }
+                        }
 
                         & > span{
                             font-size: 3rem;
@@ -3830,6 +3714,13 @@ body{
                         top: 16%;
                         left: 9vw;
 
+                        & > picture{
+                            & > img{
+                                width: 25.8065vw;
+                                min-width: 185px;
+                            }
+                        }
+
                         & > span{
                             font-size: 3rem;
                             line-height: 354px;
@@ -3840,6 +3731,13 @@ body{
                         position: absolute;
                         top: 68%;
                         left: 8vw;
+
+                        & > picture{
+                            & > img{
+                                width: 25.8065vw;
+                                min-width: 160px;
+                            }
+                        }
 
                         & > span{
                             font-size: 3rem;
@@ -3852,9 +3750,16 @@ body{
                         top: 74%;
                         left: 35vw;
 
+                        & > picture{
+                            & > img{
+                                width: 25.8065vw;
+                                min-width: 160px;
+                            }
+                        }
+
                         & > span{
                             font-size: 3rem;
-                            line-height: 354px;
+                            line-height: 160px;
                         }
                     }
     
@@ -3863,6 +3768,13 @@ body{
                         position: absolute;
                         top: 68%;
                         left: 62vw;
+
+                        & > picture{
+                            & > img{
+                                width: 25.8065vw;
+                                min-width: 185px;
+                            }
+                        }
 
                         & > span{
                             font-size: 3rem;
@@ -4669,7 +4581,7 @@ body{
                 .footer_txt{
     
                     width: 60%;
-                    font-size: 1.5rem;
+                    font-size: 1.4663vw;
 
     
                     & > ul{
@@ -5104,10 +5016,6 @@ body{
                 }
 
                 .cross{
-                    display: none;
-                }
-
-                .line{
                     display: none;
                 }
 

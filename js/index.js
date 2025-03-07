@@ -484,12 +484,6 @@ window.addEventListener("scroll", () => {
     const isometric = document.querySelector(".isometric");
     const cross = document.querySelector(".cross");
 
-    const line1 = document.querySelector("#line1");
-    const line2 = document.querySelector("#Line2");
-    const line3 = document.querySelector("#line3");
-    const line4 = document.querySelector("#Line4");
-    const line5 = document.querySelector("#Line5");
-
     const room1 = document.querySelector(".bed");
     const room2 = document.querySelector(".office");
     const room3 = document.querySelector(".toilet");
@@ -506,26 +500,6 @@ window.addEventListener("scroll", () => {
             setTimeout(() => {
                 cross.classList.add("crossactive");
             }, 500);
-
-            setTimeout(() => {
-                line1.classList.add("lineactive1");
-
-                setTimeout(() => {
-                    line2.classList.add("lineactive2");
-                }, 900);
-
-                setTimeout(() => {
-                    line3.classList.add("lineactive3");
-                }, 1100);
-
-                setTimeout(() => {
-                    line4.classList.add("lineactive4");
-                }, 1300);
-
-                setTimeout(() => {
-                    line5.classList.add("lineactive5");
-                }, 1500);
-            }, 700);
 
             setTimeout(() => {
                 room1.classList.add("bedactive");
@@ -545,27 +519,89 @@ window.addEventListener("scroll", () => {
                 setTimeout(() => {
                     room5.classList.add("livingroomactive");
                 }, 1100);
-            }, 2000);
-        } else {
-            isometric.classList.remove("opacity_1");
-            cross.classList.remove("crossactive");
-            line1.classList.remove("lineactive1");
-            line2.classList.remove("lineactive2");
-            line3.classList.remove("lineactive3");
-            line4.classList.remove("lineactive4");
-            line5.classList.remove("lineactive5");
-            room1.classList.remove("bedactive");
-            room2.classList.remove("officeactive");
-            room3.classList.remove("toiletactive");
-            room4.classList.remove("kitchenactive");
-            room5.classList.remove("livingroomactive");
-        }
+            }, 1500);
+        };
+
     }else if (window.innerWidth <= 500){
         isometric.classList.add("opacity_1");
     };
 });
 
+// // 세번째 호버시
 
+// const cross1 = document.querySelector('.cross1');
+// const cross2 = document.querySelector('.cross2');
+// const cross3 = document.querySelector('.cross3');
+// const cross4 = document.querySelector('.cross4');
+// const cross5 = document.querySelector('.cross5');
+
+// const room1 = document.querySelector('.bed > span');
+// const room2 = document.querySelector('.office > span');
+// const room3 = document.querySelector('.toilet > span');
+// const room4 = document.querySelector('.kitchen > span');
+// const room5 = document.querySelector('.livingroom > span');
+
+// cross1.addEventListener('mouseover', () => {
+
+//     room1.style.opacity = '1';
+// });
+
+// cross1.addEventListener('mouseout', () => {
+
+//     room1.style.opacity = '0';
+// });
+
+// cross2.addEventListener('mouseover', () => {
+
+//     room2.style.opacity = '1';
+// });
+
+// cross2.addEventListener('mouseout', () => {
+
+//     room2.style.opacity = '0';
+// });
+
+// cross3.addEventListener('mouseover', () => {
+
+//     room3.style.opacity = '1';
+// });
+
+// cross3.addEventListener('mouseout', () => {
+
+//     room3.style.opacity = '0';
+// });
+
+// cross4.addEventListener('mouseover', () => {
+
+//     room4.style.opacity = '1';
+// });
+
+// cross4.addEventListener('mouseout', () => {
+
+//     room4.style.opacity = '0';
+// });
+
+// cross5.addEventListener('mouseover', () => {
+
+//     room5.style.opacity = '1';
+// });
+
+// cross5.addEventListener('mouseout', () => {
+
+//     room5.style.opacity = '0';
+// });
+
+// ///
+
+// room1.addEventListener('mouseover', () => {
+
+//     cross1.style.transform = 'scale, (0.9)';
+// });
+
+// room1.addEventListener('mouseout', () => {
+
+//     cross1.style.transform = 'scale, 1';
+// });
 
 // 네번째 스크롤 이벤트
 
